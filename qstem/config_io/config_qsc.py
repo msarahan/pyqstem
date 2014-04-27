@@ -11,7 +11,7 @@ keys_to_qsc = {
 
 }
 
-qsc_to_keys = {qsc_string: key for key, qsc_string in keys_to_qsc.iteritems()}
+qsc_to_keys = {qsc_string: key for key, qsc_string in keys_to_qsc.items()}
 
 # nice parser from
 # http://www.decalage.info/en/python/configparser
