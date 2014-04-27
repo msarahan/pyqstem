@@ -1,2 +1,2 @@
 wheel==0.22.0
-numpydoc
+sphinxcontrib-napoleon
