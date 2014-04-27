@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-test_pyqstem
+test_qstem
 ----------------------------------
 
-Tests for `pyqstem` module.
+Tests for `qstem` module.
 """
 
 import unittest
 
-from pyqstem import pyqstem
+import qstem
 
 
 class TestPyqstem(unittest.TestCase):

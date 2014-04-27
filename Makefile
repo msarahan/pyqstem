@@ -25,7 +25,7 @@ clean-pyc:
 	find . -name '*~' -exec rm -f {} +
 
 lint:
-	flake8 pyqstem tests
+	flake8 qstem tests
 
 test:
 	python setup.py test
@@ -42,7 +42,7 @@ coverage:
 docs:
 	rm -f docs/pyqstem.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ pyqstem
+	sphinx-apidoc -o docs/ qstem
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html

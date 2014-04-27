@@ -4,4 +4,4 @@ Usage
 
 To use PyQSTEM in a project::
 
-	import pyqstem
+	import qstem
