@@ -3,7 +3,7 @@
 
 import os
 import sys
-import pyqstem
+import qstem
 
 try:
     from setuptools import setup
@@ -19,11 +19,11 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 setup(
     name='pyqstem',
-    version=pyqstem.__version__,
+    version=qstem.__version__,
     description='Python Quantitative STEM simulation',
     long_description=readme + '\n\n' + history,
-    author=pyqstem.__author__,
-    author_email=pyqstem.__email__,
+    author=qstem.__author__,
+    author_email=qstem.__email__,
     url='https://github.com/msarahan/pyqstem',
     packages=[
         'pyqstem',
