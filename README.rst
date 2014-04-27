@@ -14,7 +14,7 @@ PyQSTEM
 
 Python Quantitative STEM simulation
 
-* Free software: BSD license
+* Free software: GPL V3 or later
 * Documentation: http://pyqstem.rtfd.org.
 
 Features

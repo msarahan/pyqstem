@@ -26,20 +26,20 @@ setup(
     author_email=about.__email__,
     url='https://github.com/msarahan/pyqstem',
     packages=[
-        'pyqstem',
+        'qstem',
     ],
-    package_dir={'pyqstem':
-                 'pyqstem'},
+    package_dir={'qstem':
+                 'qstem'},
     include_package_data=True,
     install_requires=[
     ],
-    license="GPL v3",
+    license=about.__license__,
     zip_safe=False,
     keywords='pyqstem',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: %s' % about.__license__,
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
         'Programming Language :: Python :: 2.6',
