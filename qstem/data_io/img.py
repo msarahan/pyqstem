@@ -98,37 +98,37 @@ class ioIMG(object):
         if paramSize > 0:
             parameters = list(np.fromfile(file=f, dtype=np.float64, count=paramSize));
             if verbose:
-                print '%d Parameters:'%paramSize
+                print '{:d} Parameters:'.format(paramSize)
                 print parameters
         else:
             parameters = []
 
         # read comments from file, if any exist:
         if commentSize > 0:
-            comment = struct.unpack("%ds" % commentSize, f.read(commentSize))[0]
+            comment = struct.unpack("{:d}s".format(commentSize), f.read(commentSize))[0]
         else:
             comment = ""
 
         if verbose:
-            print('io_IMG read %s: %d x %d pixels'%(filename,Nx,Ny))
+            print('io_IMG read {:s}: {:d} x {:d} pixels'.format(filename, Nx, Ny))
 
         if complexFlag:
             if doubleFlag:
                 if verbose:
-                    print '64-bit complex data, %.3fMB\n' % (Nx*Ny*16/1048576)
+                    print '64-bit complex data, {:.3f}MB\n'.format(Nx*Ny*16/1048576)
                 img = np.fromfile(file=f, dtype=np.complex128, count=Nx*Ny)
             else:
                 if verbose:
-                    print '32-bit complex data, %.3fMB\n' % (Nx*Ny*8/1048576)
+                    print '32-bit complex data, {:.3f}MB'.format(Nx*Ny*8/1048576)
                 img = np.fromfile(file=f, dtype=np.complex64, count = Nx*Ny)
         else:
             if doubleFlag:
                 if verbose:
-                    print '64-bit real data, %.3fMB\n' % (Nx*Ny*8/1048576)
+                    print '64-bit real data, {:.3f}MB\n'.format(Nx*Ny*8/1048576)
                 img = np.fromfile(file=f, dtype=np.float64, count=Nx*Ny)
             else:
                 if verbose:
-                    print '32-bit real data, %.3fMB\n' % (Nx*Ny*4/1048576)
+                    print '32-bit real data, {:.3f}MB\n'.format(Nx*Ny*4/1048576)
                 img = np.fromfile(file=f, dtype=np.float32, count=Nx*Ny)
         img=img.reshape(Ny,Nx)
         
@@ -167,7 +167,6 @@ class ioIMG(object):
         f.write(struct.pack(header_format, header_size, len(parameters), len(comment),
                             nx, ny, int(complex_flag), array.dtype.itemsize, header_version,
                             thicknessOrDefocus, dx, dy))
-        f.write(struct.pack("%dd"%len(parameters), *parameters))
+        f.write(struct.pack("{:d}d".format(len(parameters)), *parameters))
         f.write(comment)
-        #struct.pack_into("%ss"%len(comment), f, offset, comment)
         array.tofile(f)
