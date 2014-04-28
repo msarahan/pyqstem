@@ -38,7 +38,7 @@ class ioIMG(object):
         Reading binary data of legacy QSTEM img format
 
         Parameters
-        -----------
+        ----------
         filename : string
             The input filename to read from
         verbose : bool
@@ -46,18 +46,21 @@ class ioIMG(object):
 
         Returns
         -------
-            img : ndarray
-                The read image data
-            comment : string
-                The image's comment string
-            thicknessOrDefocus : float
-                The thickness that the image was recorded at.  Also abused to
-                hold defocus instead of thickness.
-            dx : float
-                The resolution of the image in the horizontal direction
-            dy : float
-                The resolution of the image in the vertical direction
-            parameters : 
+        img : ndarray
+            The read image data
+        comment : string
+            The image's comment string
+        thicknessOrDefocus : float
+            The thickness that the image was recorded at.  Also abused to
+            hold defocus instead of thickness.
+        dx : float
+            The resolution of the image in the horizontal direction
+        dy : float
+            The resolution of the image in the vertical direction
+        parameters : list of floats
+            an arbitrary list of parameters.  The order is known only in the
+            context of the file, and no provision for annotating the file with
+            labels for parameters exists.
         """
 
         # open the file and define the file ID (fid):
