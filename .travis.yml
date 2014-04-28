@@ -6,6 +6,10 @@ python:
   - "3.3"
   - "2.7"
 
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get -qq install python-numpy
+  
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements.txt
 
