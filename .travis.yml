@@ -9,6 +9,8 @@ python:
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get -qq install python-numpy python3-numpy
+  - pip install --upgrade pip setuptools  # Upgrade pip and setuptools to get ones with `wheel` support
+  - pip install --find-links http://wheels.astropy.org/ --find-links http://wheels2.astropy.org/ --use-wheel --use-mirrors numpy
   
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements.txt
