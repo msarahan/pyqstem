@@ -98,8 +98,8 @@ class ioIMG(object):
         if paramSize > 0:
             parameters = list(np.fromfile(file=f, dtype=np.float64, count=paramSize));
             if verbose:
-                print '{:d} Parameters:'.format(paramSize)
-                print parameters
+                print('{:d} Parameters:'.format(paramSize))
+                print(parameters)
         else:
             parameters = []
 
@@ -115,20 +115,20 @@ class ioIMG(object):
         if complexFlag:
             if doubleFlag:
                 if verbose:
-                    print '64-bit complex data, {:.3f}MB\n'.format(Nx*Ny*16/1048576)
+                    print('64-bit complex data, {:.3f}MB\n'.format(Nx*Ny*16/1048576))
                 img = np.fromfile(file=f, dtype=np.complex128, count=Nx*Ny)
             else:
                 if verbose:
-                    print '32-bit complex data, {:.3f}MB'.format(Nx*Ny*8/1048576)
+                    print('32-bit complex data, {:.3f}MB'.format(Nx*Ny*8/1048576))
                 img = np.fromfile(file=f, dtype=np.complex64, count = Nx*Ny)
         else:
             if doubleFlag:
                 if verbose:
-                    print '64-bit real data, {:.3f}MB\n'.format(Nx*Ny*8/1048576)
+                    print('64-bit real data, {:.3f}MB\n'.format(Nx*Ny*8/1048576))
                 img = np.fromfile(file=f, dtype=np.float64, count=Nx*Ny)
             else:
                 if verbose:
-                    print '32-bit real data, {:.3f}MB\n'.format(Nx*Ny*4/1048576)
+                    print('32-bit real data, {:.3f}MB\n'.format(Nx*Ny*4/1048576))
                 img = np.fromfile(file=f, dtype=np.float32, count=Nx*Ny)
         img=img.reshape(Ny,Nx)
         
