@@ -54,3 +54,4 @@ docs/_build/
 
 # IDEs
 .idea/
+*.sublime*
